@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<!--
+  Google HTML5 slide template
+
+  Authors: Luke Mahé (code)
+           Marcin Wichary (code and design)
+           
+           Dominic Mazzoni (browser compatibility)
+           Charles Chen (ChromeVox support)
+
+  URL: http://code.google.com/p/html5slides/
+-->
+<html>
+    <head>
+        <title>Sistemas Operativos de Propósito General</title>
+        <meta charset='utf-8'>
+        <script src='slides.js'></script>
+        <style type="text/css">
+            /* Your individual styles here, or just use inline styles if that’s what you want. */
+        </style>
+    </head>
+    <body style='display: none'>
+        <section class='slides layout-regular template-default'>
+            <!-- Your slides (<article>s) go here. Delete or comment out the slides below. -->
+            <!--            <article class='biglogo'></article>-->
+            <article>
+                <h1 class="centered">Sistemas Operativos<br />de Propósito General</h1>
+                <p>Emmanuel Beneventano<br />
+                    Santiago Rojo<br />
+                    Hernán Ruiz<br />
+                    Fernando Scorpiniti</p>
+            </article>
+            <article>
+                <h3>Temario</h3>
+                <ul>
+                    <li>Introducción</li>
+                    <li>Arranque</li>
+                    <li>Estructura del sistema</li>
+                    <li>Administación de procesos</li>
+                    <li>Administación de memoria</li>
+                    <li>Sistema de archivos</li>
+                    <li>Seguridad</li>
+                </ul>
+            </article>
+            <article>
+                <h2>Introducción</h2>
+            </article>
+            <article>
+                <h3>Introducción</h3>
+                <ul>
+                    <li>Sistemas operativos analizados
+                        <ul>
+                            <li>Linux</li>
+                            <li>Windows</li>
+                        </ul>
+                    </li>
+                    <li>Historia</li>
+                    <li>Diferencias y mejoras entre versiones</li>
+                </ul>
+            </article>
+            <article>
+                <h2>Arranque</h2>
+            </article>
+            <article>
+                <h3>Arranque</h3>
+                <br />
+                <img class="centered" src="images/arranque.png" alt="arranque.png" />
+            </article>
+            <article>
+                <h2>Estructura del sistema</h2>
+            </article>
+            <article>
+                <h3>Estructura del sistema</h3>
+                <table>
+                    <tr>
+                        <th style="width: 50%;">Linux</th>
+                        <th style="width: 50%;">Windows</th>
+                    </tr>
+                    <tr>
+                        <td>Utilidades del sistema</td>
+                        <td>Executive</td>
+                    </tr>
+                    <tr>
+                        <td>Bibliotecas del sistema</td>
+                        <td>Kernel</td>
+                    </tr>
+                    <tr>
+                        <td>Kernel</td>
+                        <td>HAL</td>
+                    </tr>
+                </table>
+            </article>
+            <article>
+                <h3>Estructura del sistema : Linux</h3>
+                <br />
+                <img class="centered" style="width: 800px;" src="images/estructura_linux.png" alt="estructura_linux.png" />
+            </article>
+            <article>
+                <h3>Estructura del sistema : Windows</h3>
+                <br />
+                <img class="centered" style="height: 400px;" src="images/estructura_windows.png" alt="estructura_windows.png" />
+            </article>
+            <article>
+                <h2>Administración de procesos</h2>
+            </article>
+            <article>
+                <h3>Administración de procesos : Linux</h3>
+                <ul>
+                    <li>Gestión</li>
+                    <li>Procesos y Hebras</li>
+                    <li>Planificación</li>
+                    <li>Sincronización</li>
+                    <li>Comunicación interprocesos</li>
+                    <li>Multiprocesamiento</li>
+                </ul>
+            </article>
+            <article>
+                <h3>Linux: Gestión</h3>
+                <br />
+                <ul>
+                    <li>Modelo de procesos <code>fork()</code> y <code>exec()</code></li>
+                </ul>
+                <ul>
+                    <li>Contexto del proceso: Se divide en tres secciones:
+                        <ul>
+                            <li>Identidad del proceso</li>  
+                            <li>Entorno</li>
+                            <li>Contexto</li>
+                        </ul>
+                    </li>
+                </ul>
+            </article>
+            <article>
+                <h3>Linux: Gestión</h3>
+                <br>
+                <ul>
+                    <li><strong>Identidad del proceso</strong>
+                        <ul>
+                            <li> Id</li>
+                            <li>Credenciales</li>
+                            <li>Personalidad</li>
+                        </ul>
+                    </li>
+                </ul>
+                <ul>
+                    <li><strong>Entorno:</strong>
+                        <ul>
+                            <li>Se hereda del proceso padre</li>
+                            <li>Compuesto por dos vectores: El vector de argumentos y el vector de entornos</li>
+                        </ul>
+                    </li>
+                </ul>
+            </article>
+            <article>
+                <h3>Linux: Gestión</h3>
+                <ul>
+                    <li><strong>Contexto</strong><br />
+                        Incluye:
+                        <ul>
+                            <li>Contexto de planificación</li>
+                            <li>Contabilidad de recursos</li>
+                            <li>Tabla de archivos</li>
+                            <li>Contexto del sistema de archivos</li>
+                            <li>Tabla de rutina de tratamiento de señales</li>
+                            <li>Contexto de memoria virtual</li>
+
+                        </ul>
+                    </li>
+                </ul>
+            </article>
+            <article>
+                <h3>Linux: Procesos y Hebras</h3>
+                <br>
+                <ul>
+                    <li>Llamada al sistema "<code>clone()</code>: Es la llamada que permite la creación de hebras."</li>
+                </ul>     
+                <ul>
+                    <li>Indicadores: Determinan el grado de compartición entre las tareas padre e hija.</li>
+                </ul>     
+            </article>
+            <article>
+                <h3>Linux: Planificación</h3>
+                <p>Linux utiliza dos algoritmos de planificación:</p>
+                <ul>
+                    <li>Algoritmo de tiempo compartido: utilizado para planificar de manera equitativa multiples procesos.</li>
+                </ul>     
+                <ul>
+                    <li>Algoritmo para tareas en tiempo real: las prioridades son mas importantes que la equidad.</li>
+                </ul>     
+            </article>
+            <article>
+                <h3>Linux: Planificación</h3>
+                <p>El kernel de Linux utiliza las llamadas "Colas de ejecución" para mantener una lista de todas las tareas.
+                    Contiene dos matrices de prioridad:</p>
+                <ul>
+                    <li>Matriz de tareas activas.</li>
+                </ul>     
+                <ul>
+                    <li>Matriz de tareas caducadas.</li>
+                </ul>     
+            </article>
+            <article>
+                <h3>Linux: Planificación</h3>
+                <p>Linux implementa dos clases de planificación en tiempo real:</p>
+                <ul>
+                    <li>FCFS (<em>First Come, First Served</em>).</li>
+                </ul>     
+                <ul>
+                    <li>Planificación por turnos.</li>
+                </ul>     
+            </article>
+            <article>
+                <h3>Linux: Sincronización del kernel</h3>
+                <p>Una solicitud para ejecución en modo Kernel se produce si:</p>
+                <ul>
+                    <li>Un programa en ejecución pide un servicio del Sistema Operativo.</li>
+                </ul>     
+                <ul>
+                    <li>Un controlador de dispositivo genera una interrupción y el kernel comience a ejecutar una rutina de tratamiento de la misma.</li>
+                </ul>     
+            </article>
+            <article>
+                <h3>Linux: Sincronización del kernel</h3>
+                <p>Bloqueos monoprocesador y multiprocesador en Linux.</p>
+                <ul>
+                    <li>Sistema de activación del mecanismo de apropiación del kernel.</li>
+                    <li>Cerrojos de bucle sin fin.</li>
+                </ul>
+                <p>Otra técnica para tratar interrupciones: Hardware de control de interrupciones.
+                    Se separa a las rutinas de servicio de interrupciones en dos secciones:</p>
+                <ul>
+                    <li>La mitad superior.</li>
+                </ul>
+                <ul>
+                    <li>La mitad inferior.</li>
+                </ul>
+            </article>
+            <article>
+                <h3>Linux: Multiprocesamiento</h3>
+                <p>El multiprocesamiento simétrico de Linux permite que una serie de procesos separados, se ejecuten en diferentes procesadores.</p>
+                <ul>
+                    <li>Se creó un único cerrojo de bucle sin fin del kernel para permitir que estuvieran activos concurrentemente en el kernel múltiples procesos.</li>
+                </ul>
+            </article>
+            <article>
+                <h3>Administración de procesos : Windows</h3>
+                <ul>
+                    <li>Planificación</li>
+                    <li>Hebras</li>
+                    <li>Fibras</li>
+                    <li>Comunicación interprocesos</li>
+                    <li>Sincronización</li>
+                    <li>Multiprocesamiento</li>
+                </ul>
+            </article>
+            <article>
+                <h2>Administración de memoria</h2>
+            </article>
+            <article>
+                <h3>Administración de memoria: Linux</h3>
+                <ul>
+                    <li>Memoria física</li>
+                    <li>Memoria virtual</li>
+                    <li>Intercambio y Paginación</li>
+                    <li>Ejecución y carga de programas de usuario</li>
+                </ul>
+            </article>
+            <article>
+                <h3>Administración de memoria: Windows</h3>
+                <ul>
+                    <li>Memoria virtual</li>
+                    <li><em>Working Set</em></li>
+                    <li>Intercambio y Paginación</li>
+                    <li>¿Ejecución y carga de programas de usuario?</li>
+                </ul>
+            </article>
+            <article>
+                <h2>Sistemas de archivos</h2>
+            </article>
+            <article>
+                <h3>Sistema de archivos</h3>
+            </article>
+            <article>
+                <h2>Seguridad</h2>
+            </article>
+            <article>
+                <h3>Seguridad: Linux</h3>
+                <ul>
+                    <li>Control de acceso</li>
+                    <li>Autenticación</li>
+                </ul>
+            </article>
+            <article>
+                <h3>Seguridad: Windows</h3>
+                <ul>
+                    <li>Subsistema de inicio de sesión y seguridad</li>
+                </ul>
+            </article>
+
+            <!--            <article>
+                            <h3>
+                                Simple slide with header and text
+                            </h3>
+                            <p>
+                                This is a slide with just text. This is a slide with just text.
+                                This is a slide with just text. This is a slide with just text.
+                                This is a slide with just text. This is a slide with just text.
+                            </p>
+                            <p>
+                                There is more text just underneath with a <code>code sample: 5px</code>.
+                            </p>
+                        </article>
+            
+                        <article class='smaller'>
+                            <h3>
+                                Simple slide with header and text (small font)
+                            </h3>
+                            <p>
+                                This is a slide with just text. This is a slide with just text.
+                                This is a slide with just text. This is a slide with just text.
+                                This is a slide with just text. This is a slide with just text.
+                            </p>
+                            <p>
+                                There is more text just underneath with a <code>code sample: 5px</code>.
+                            </p>
+                        </article>
+            
+                        <article>
+                            <h3>
+                                Slide with bullet points and a longer title, just because we
+                                can make it longer
+                            </h3>
+                            <ul>
+                                <li>
+                                    Use this template to create your presentation
+                                </li>
+                                <li>
+                                    Use the provided color palette, box and arrow graphics, and
+                                    chart styles
+                                </li>
+                                <li>
+                                    Instructions are provided to assist you in using this
+                                    presentation template effectively
+                                </li>
+                                <li>
+                                    At all times strive to maintain Google's corporate look and feel
+                                </li>
+                            </ul>
+                        </article>
+            
+                        <article>
+                            <h3>
+                                Slide with bullet points that builds
+                            </h3>
+                            <ul class="build">
+                                <li>
+                                    This is an example of a list
+                                </li>
+                                <li>
+                                    The list items fade in
+                                </li>
+                                <li>
+                                    Last one!
+                                </li>
+                            </ul>
+            
+                            <div class="build">
+                                <p>Any element with child nodes can build.</p>
+                                <p>It doesn't have to be a list.</p>
+                            </div>
+                        </article>
+            
+                        <article class='smaller'>
+                            <h3>
+                                Slide with bullet points (small font)
+                            </h3>
+                            <ul>
+                                <li>
+                                    Use this template to create your presentation
+                                <li>
+                                    Use the provided color palette, box and arrow graphics, and
+                                    chart styles
+                                <li>
+                                    Instructions are provided to assist you in using this
+                                    presentation template effectively
+                                <li>
+                                    At all times strive to maintain Google's corporate look and feel
+                            </ul>
+                        </article>
+            
+                        <article>
+                            <h3>
+                                Slide with a table
+                            </h3>
+            
+                            <table>
+                                <tr>
+                                    <th>Name
+                                    <th>Occupation
+                                <tr>
+                                    <td>Luke Mahé
+                                    <td>V.P. of Keepin’ It Real
+                                <tr>
+                                    <td>Marcin Wichary
+                                    <td>The Michael Bay of Doodles
+                            </table>
+                        </article>
+            
+                        <article class='smaller'>
+                            <h3>
+                                Slide with a table (smaller text)
+                            </h3>
+            
+                            <table>
+                                <tr>
+                                    <th>
+                                        Name
+                                    <th>
+                                        Occupation
+                                <tr>
+                                    <td>
+                                        Luke Mahé
+                                    <td>
+                                        V.P. of Keepin’ It Real
+                                <tr>
+                                    <td>
+                                        Marcin Wichary
+                                    <td>
+                                        The Michael Bay of Doodles
+                            </table>
+                        </article>
+            
+                        <article>
+                            <h3>
+                                Styles
+                            </h3>
+                            <ul>
+                                <li>
+                                    <span class='red'>class="red"</span>
+                                <li>
+                                    <span class='blue'>class="blue"</span>
+                                <li>
+                                    <span class='green'>class="green"</span>
+                                <li>
+                                    <span class='yellow'>class="yellow"</span>
+                                <li>
+                                    <span class='black'>class="black"</span>
+                                <li>
+                                    <span class='white'>class="white"</span>
+                                <li>
+                                    <b>bold</b> and <i>italic</i>
+                            </ul>
+                        </article>
+            
+                        <article>
+                            <h2>
+                                Segue slide
+                            </h2>
+                        </article>
+            
+                        <article>
+                            <h3>
+                                Slide with an image
+                            </h3>
+                            <p>
+                                <img src='images/example-graph.png'>
+                            </p>
+                            <div class='source'>
+                                Source: Sergey Brin
+                            </div>
+                        </article>
+            
+                        <article>
+                            <h3>
+                                Slide with an image (centered)
+                            </h3>
+                            <p>
+                                <img class='centered' src='images/example-graph.png'>
+                            </p>
+                            <div class='source'>
+                                Source: Larry Page
+                            </div>
+                        </article>
+            
+                        <article class='fill'>
+                            <h3>
+                                Image filling the slide (with optional header)
+                            </h3>
+                            <p>
+                                <img src='images/example-cat.jpg'>
+                            </p>
+                            <div class='source white'>
+                                Source: Eric Schmidt
+                            </div>
+                        </article>
+            
+                        <article>
+                            <h3>
+                                This slide has some code
+                            </h3>
+                            <section>
+                                <pre>
+            &lt;script type='text/javascript'&gt;
+              // Say hello world until the user starts questioning
+              // the meaningfulness of their existence.
+              function helloWorld(world) {
+                for (var i = 42; --i &gt;= 0;) {
+                  alert('Hello ' + String(world));
+                }
+              }
+            &lt;/script&gt;
+            &lt;style&gt;
+              p { color: pink }
+              b { color: blue }
+              u { color: 'umber' }
+            &lt;/style&gt;
+                                </pre>
+                            </section>
+                        </article>
+            
+                        <article class='smaller'>
+                            <h3>
+                                This slide has some code (small font)
+                            </h3>
+                            <section>
+                                <pre>
+            &lt;script type='text/javascript'&gt;
+              // Say hello world until the user starts questioning
+              // the meaningfulness of their existence.
+              function helloWorld(world) {
+                for (var i = 42; --i &gt;= 0;) {
+                  alert('Hello ' + String(world));
+                }
+              }
+            &lt;/script&gt;
+            &lt;style&gt;
+              p { color: pink }
+              b { color: blue }
+              u { color: 'umber' }
+            &lt;/style&gt;
+                                </pre>
+                            </section>
+                        </article>
+            
+                        <article>
+                            <q>
+                                The best way to predict the future is to invent it.
+                            </q>
+                            <div class='author'>
+                                Alan Kay
+                            </div>
+                        </article>
+            
+                        <article class='smaller'>
+                            <q>
+                                A distributed system is one in which the failure of a computer 
+                                you didn’t even know existed can render your own computer unusable.
+                            </q>
+                            <div class='author'>
+                                Leslie Lamport
+                            </div>
+                        </article>
+            
+                        <article class='nobackground'>
+                            <h3>
+                                A slide with an embed + title
+                            </h3>
+            
+                            <iframe src='http://www.google.com/doodle4google/history.html'></iframe>
+                        </article>
+            
+                        <article class='nobackground'>
+                            <iframe src='http://www.google.com/doodle4google/history.html'></iframe>
+                        </article>
+            
+                        <article class='fill'>
+                            <h3>
+                                Full-slide embed with (optional) slide title on top
+                            </h3>
+                            <iframe src='http://www.google.com/doodle4google/history.html'></iframe>
+                        </article>
+            
+                        <article>
+                            <h3>
+                                Thank you!
+                            </h3>
+            
+                            <ul>
+                                <li>
+                                    <a href='http://www.google.com'>google.com</a>
+                                </li>
+                            </ul>
+                        </article>
+            -->
+        </section>
+
+    </body>
+</html>
