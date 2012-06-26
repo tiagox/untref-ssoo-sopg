@@ -149,19 +149,18 @@
                     <li>Multiprocesamiento</li>
                 </ul>
             </article>
-           <article>
+            <article>
                 <h3>/ Adm. de Procesos / Linux / Gestión $</h3>
                 <br />
                 <ul>
                     <li>Modelo de procesos <code>fork()</code> y <code>exec()</code></li>
                 </ul>
                 <ul>
-                    <li>Contexto del proceso: Se divide en tres secciones:
-                       <br>
-                       <ul>
-                              <li>Identidad del proceso</li>  
-                              <li>Entorno</li>
-                              <li>Contexto</li>
+                    <li>Contexto del proceso
+                        <ul>
+                            <li>Identidad del proceso</li>  
+                            <li>Entorno</li>
+                            <li>Contexto</li>
                         </ul>
                     </li>
                 </ul>
@@ -169,29 +168,31 @@
             <article>
                 <h3>/ Adm. de Procesos / Linux / Gestión $</h3>
                 <ul>
-                    <li><strong>Identidad del proceso</strong></li>
+                    <li><strong>Identidad del proceso</strong>
                         <ul>
-                            <li> Id: Especifíca al sistema acerca de los procesos cuando una aplicación realiza una llamada.</li>
-                            <li>Credenciales: Determina los derechos de un proceso para acceder a archivos o a recursos.</li>
-                            <li>Personalidad: Puede modificar la semantica de ciertas llamadas al sistema.</li>
+                            <li><strong>Id</strong>: Especifíca al sistema acerca de los procesos cuando una aplicación realiza una llamada.</li>
+                            <li><strong>Credenciales</strong>: Determina los derechos de un proceso para acceder a archivos o a recursos.</li>
+                            <li><strong>Personalidad</strong>: Puede modificar la semantica de ciertas llamadas al sistema.</li>
                         </ul>
                     </li>
                 </ul>
                 <ul>
-                    <li><strong>Entorno:</strong>
+                    <li><strong>Entorno</strong>
                         <ul>
                             <li>Se hereda del proceso padre</li>
-                            <li>Compuesto por dos vectores: El vector de argumentos y el vector de entornos</li>
+                            <li>Compuesto por dos vectores
+                                <ul>
+                                    <li>Vector de argumentos</li>
+                                    <li>Vector de entornos</li>
+                                </ul>
                         </ul>
                     </li>
                 </ul>
             </article>
             <article>
                 <h3>/ Adm. de Procesos / Linux / Gestión $</h3>
-                 <ul>
-                    <li><strong>Contexto: </strong>Es el estado del programa en ejecución</li>
-                    <br>
-                        Incluye:
+                <ul>
+                    <li><strong>Contexto: </strong>Es el estado del programa en ejecución
                         <ul>
                             <li>Contexto de planificación</li>
                             <li>Contabilidad de recursos</li>
@@ -208,10 +209,14 @@
                 <h3>/ Adm. de Procesos / Linux / Procesos y Hebras $</h3>
                 <br>
                 <ul>
-                    <li>Llamada al sistema "<code>clone()</code>: Es la llamada que permite la creación de hebras."</li>
+                    <li>Llamada al sistema <code>clone()</code>
+                        <p>Es la llamada que permite la creación de hebras.</p>
+                    </li>
                 </ul>     
                 <ul>
-                    <li>Indicadores: Determinan el grado de compartición entre las tareas padre e hija.</li>
+                    <li>Indicadores
+                        <p>Determinan el grado de compartición entre las tareas padre e hija.</p>
+                    </li>
                 </ul>     
             </article>
             <article>
@@ -219,29 +224,22 @@
                 <p>Linux utiliza dos algoritmos de planificación:</p>
                 <ul>
                     <li>Algoritmo de tiempo compartido: utilizado para planificar de manera equitativa multiples procesos.</li>
-                </ul>     
-                <ul>
                     <li>Algoritmo para tareas en tiempo real: las prioridades son mas importantes que la equidad.</li>
                 </ul>     
             </article>
             <article>
                 <h3>/ Adm. de Procesos / Linux / Planificación $</h3>
-                <p>El kernel de Linux utiliza las llamadas "Colas de ejecución" para mantener una lista de todas las tareas.
-                    Contiene dos matrices de prioridad:</p>
+                <p>El kernel de Linux utiliza las llamadas "Colas de ejecución" para mantener una lista de todas las tareas.</p>
                 <ul>
                     <li>Matriz de tareas activas.</li>
-                </ul>     
-                <ul>
                     <li>Matriz de tareas caducadas.</li>
                 </ul>     
             </article>
             <article>
                 <h3>/ Adm. de Procesos / Linux / Planificación $</h3>
-                <p>Linux implementa dos clases de planificación en tiempo real:</p>
+                <p>Linux implementa dos clases de planificación en tiempo real</p>
                 <ul>
                     <li>FCFS (<em>First Come, First Served</em>).</li>
-                </ul>     
-                <ul>
                     <li>Planificación por turnos.</li>
                 </ul>     
             </article>
@@ -250,8 +248,6 @@
                 <p>Una solicitud para ejecución en modo Kernel se produce si:</p>
                 <ul>
                     <li>Un programa en ejecución pide un servicio del Sistema Operativo.</li>
-                </ul>     
-                <ul>
                     <li>Un controlador de dispositivo genera una interrupción y el kernel comience a ejecutar una rutina de tratamiento de la misma.</li>
                 </ul>     
             </article>
@@ -262,12 +258,10 @@
                     <li>Sistema de activación del mecanismo de apropiación del kernel.</li>
                     <li>Cerrojos de bucle sin fin.</li>
                 </ul>
-                <p>Otra técnica para tratar interrupciones: Hardware de control de interrupciones.
-                    Se separa a las rutinas de servicio de interrupciones en dos secciones:</p>
+                <p>Otra técnica para tratar interrupciones: Hardware de control de interrupciones.</p>
+                <p>Se separa a las rutinas de servicio de interrupciones en dos secciones:</p>
                 <ul>
                     <li>La mitad superior.</li>
-                </ul>
-                <ul>
                     <li>La mitad inferior.</li>
                 </ul>
             </article>
@@ -279,22 +273,17 @@
                 </ul>
             </article>
             <article>
-                <h3>Linux: Comunicación interprocesos</h3>
-                <br>
+                <h3>/ Adm. de Procesos / Linux / Comunicación interprocesos $</h3>
                 <p><strong>Sincronización</strong></p>
-                <br>
                 <p>Implica que un proceso sepa que se ha producido un suceso o que se transfiera datos de un proceso a otro.</p>
-                <br>
                 <ul>
                     <li>Linux utiliza colas de espera y estados de planificación.</li>
                     <li>También implementa el mecanismo de semaforos de Unix.</li>
                 </ul>
             </article>
             <article>
-                <h3>Linux: Comunicación interprocesos</h3>
-                <br>
+                <h3>/ Adm. de Procesos / Linux / Comunicación interprocesos $</h3>
                 <p><strong>Transferencia de datos entre procesos</strong></p>
-                <br>
                 <ul>
                     <li>Mecanismo "Pipe": Permite que un procesos hijo herede el canal de comunicación del padre.</li>
                     <li>Mecanismo de memoria compartida: Los datos escritos por un proceso en una región de memoria compartida pueden ser leidos por cuaquier otro proceso que haya mapeado dicha región en su espacio de direcciones.</li>
@@ -305,10 +294,8 @@
                 <ul>
                     <li>Hebras y planificación</li>
                     <li>Gestor de procesos</li>
-                    <li>Fibras</li>
                     <li>Comunicación interprocesos</li>
                     <li>Sincronización</li>
-                    <li>Multiprocesamiento</li>
                 </ul>
             </article>
             <article>
@@ -362,6 +349,56 @@
                 </ul>
             </article>
             <article>
+                <h3>:\ Adm. de procesos \ Windows \ Comunicación interprocesos ></h3>
+                <p>Windows proporciona tres formas de compartir objetos entre procesos.</p>
+                <ul>
+                    <li>Un proceso hijo hereda un descriptor del objeto
+                        <p>Comunicación a través de los procesos compartidos.</p>
+                    </li>
+                    <li>Un proceso crea un objeto con nombre y el segundo proceso lo abre utilizando dicho nombre
+                        <p>El espacio de nombres es global.</p>
+                    </li>
+                    <li>Duplicando un descriptor
+                        <p>Requiere de un mecanismo que permita compartir el descriptor duplicado.</p>
+                    </li>
+                </ul>
+            </article>
+            <article>
+                <h3>:\ Adm. de procesos \ Windows \ Comunicación interprocesos ></h3>
+                <p>Pasaje de mensajes.</p>
+                <ul>
+                    <li>Asíncronas
+                        <ul>
+                            <li><code>PostMessage()</code></li>
+                            <li><code>PostThreadMessage()</code></li>
+                        </ul>
+                    </li>
+                    <li>Síncronas
+                        <ul>
+                            <li><code>SendMessage()</code></li>
+                            <li><code>SendThreadMessage()</code></li>
+                            <li><code>SendMessageCallback()</code></li>
+                        </ul>
+                    </li>
+                </ul>
+            </article>
+            <article>
+                <h3>:\ Adm. de procesos \ Windows \ Comunicación interprocesos ></h3>
+                <p>Dentro de los mensajes se pueden copiar datos.</p>
+                <p>Toda hebra de la API Win32 tiene su propia cola de mensajes.</p>
+                <p>Si una aplicación no invoca <code>GetMessage()</code> y la cola se llena, pasados 5 segundos el sistema marca la aplicación como <strong>"No responde"</strong>.</p>
+            </article>
+            <article>
+                <h3>:\ Adm. de procesos \ Windows \ Sincronización ></h3>
+                <p>El kernel proporciona objetos de sincronización, como semáforos y objetos mutex.</p>
+                <p>La API Win32 provee métodos para el trabajo con sección critica.</p>
+                <ul>
+                    <li><code>InitializeCriticalSection()</code></li>
+                    <li><code>EnterCriticalSection()</code></li>
+                    <li><code>LeaveCriticalSection()</code></li>
+                </ul>
+            </article>
+            <article>
                 <h2>Administración de memoria</h2>
             </article>
             <article>
@@ -381,28 +418,93 @@
                 </ul>
             </article>
             <article class="nobackground">
-                <h3>Administración de memoria: Windows</h3>
-                <br />
-                <img class="centered" src="images/memoria_windows.png" alt="memoria_windows.png" />
+                <h3>:\ Administración de memoria \ Windows ></h3>
+                <p>
+                    <img class="centered" src="images/memoria_windows.png" alt="memoria_windows.png" />
+                </p>
             </article>
             <article>
                 <h2>Sistemas de archivos</h2>
             </article>
             <article>
-                <h3>Sistema de archivos</h3>
+                <h3>/ Sistema de archivos / Linux $</h3>
+            </article>
+            <article class="nobackground">
+                <h3>:\ Sistema de archivos \ Windows ></h3>
+                <p>NTFS</p>
+                <p>La unidad fundamental es el volumen y esta basado en una partición de un disco lógico.</p>
+                <p>Un <em>cluster</em> es un conjunto de sectores de un disco y es la unidad de asignación del disco.</p>
+                <table>
+                    <tr>
+                        <th style="width: 50%"><em>cluster</em></th>
+                        <th style="width: 50%">Volumen</th>
+                    </tr>
+                    <tr>
+                        <td>Tamaño del sector</td>
+                        <td>< 512 MB</td>
+                    </tr>
+                    <tr>
+                        <td>1 KB</td>
+                        <td>1 GB</td>
+                    </tr>
+                    <tr>
+                        <td>2 KB</td>
+                        <td>2 GB</td>
+                    </tr>
+                    <tr>
+                        <td>4 KB</td>
+                        <td>> 2 GB</td>
+                    </tr>
+                </table>
+            </article>
+            <article>
+                <h3>:\ Sistema de archivos \ Windows ></h3>
+                <p>El tamaño pequeño de los <em>cluster</em> en NTSF disminuye la fragmentación interna causada en FAT16 por <em>clusters</em> de 32 KB.</p>
+                <p>El sistema utiliza números lógicos de <em>cluster</em> (LCN) como direcciones de disco.</p>
+                <p>Los archivos en NTFS no son simples flujos de bytes, sino objetos estructurados compuestos de atributos con tipo.</p>
+                <p>Todas las actualizaciones de las estructuras de datos del sistema de archivos se realizan dentro de transacciones.</p>
+            </article>
+            <article>
+                <h3>:\ Sistema de archivos \ Windows ></h3>
+                <p>Gestión de volumenes</p>
+                <ul>
+                    <li>Conjunto de volumenes
+                        <p>Permite concatenar hasta 32 particiones físicas, para conseguir volumenes de mayor tamaño.</p>
+                    </li>
+                    <li>Conjunto de distribución en bandas
+                        <p>Consiste en entrelazar sus bloques por turnos. <strong>RAID 0</strong></p>
+                    </li>
+                    <li>Conjunto de distribución en bandas con paridad
+                        <p>Conocido como <strong>RAID 5</strong></p>
+                    </li>
+                    <li>Espejo de disco
+                        <p>Dos particiones de igual tamaño situadas en discos distintos. <strong>RAID 1</strong></p>
+                    </li>
+                </ul>
+            </article>
+            <article>
+                <h3>:\ Sistema de archivos \ Windows ></h3>
+                <p>NTFS cuenta con las siguientes caracteristicas</p>
+                <ul>
+                    <li>Compresión</li>
+                    <li>Cifrado</li>
+                    <li>Puntos de montage</li>
+                    <li>Diario de cambios</li>
+                    <li>Copias ocultas de volúmenes</li>
+                </ul>
             </article>
             <article>
                 <h2>Seguridad</h2>
             </article>
             <article>
-                <h3>Inicio de sesión: Linux</h3>
+                <h3>/ Inicio de sesión / Linux $</h3>
                 <ul>
                     <li>Contrul de acceso</li>
                     <li>Autenticación</li>
                 </ul>
             </article>
             <article>
-                <h3>Inicio de sesión: Windows</h3>
+                <h3>:\ Inicio de sesión \ Windows ></h3>
                 <ul>
                     <li>WINLOGON
                         <ul>
