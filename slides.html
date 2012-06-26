@@ -54,8 +54,8 @@
                             <li>Windows</li>
                         </ul>
                     </li>
-<!--                    <li>Historia</li>-->
-<!--                    <li>Diferencias y mejoras entre versiones</li>-->
+                    <!--                    <li>Historia</li>-->
+                    <!--                    <li>Diferencias y mejoras entre versiones</li>-->
                 </ul>
             </article>
             <article>
@@ -289,11 +289,53 @@
                 </ul>
             </article>
             <article>
-                <h3>:\ Adm. de procesos \ Windows \ Gestor de procesos ></h3>
+                <h3>:\ Adm. de procesos \ Windows \ Hebras y planificación</h3>
+                <p>Una hebra es una unidad ejecutable.</p>
+                <p>Cada proceso tiene una o más hebras.</p>
                 <ul>
-                    <li>Crear</li>
-                    <li>Borrar</li>
-                    <li>Utilizar</li>
+                    <li>Hebra
+                        <ul>
+                            <li>Prioridad real</li>
+                            <li>Afinidad de procesador</li>
+                            <li>Información de utilización de CPU</li>
+                        </ul>
+                    </li>
+                </ul>
+            </article>
+            <article>
+                <h3>:\ Adm. de procesos \ Windows \ Hebras y planificación</h3>
+                <p>Estados de las hebras.</p>
+                <ul>
+                    <li>Preparada</li>
+                    <li>Lista</li>
+                    <li>Ejecución</li>
+                    <li>Espera</li>
+                    <li>Transición</li>
+                    <li>Terminada</li>
+                </ul>
+            </article>
+            <article class="nobackground">
+                <h3>:\ Adm. de procesos \ Windows \ Hebras y planificación</h3>
+                <p>Esquema de prioridades.</p>
+                <ul>
+                    <li>Clase variable (0 - 15)</li>
+                    <li>Clase de tiempo real (16 - 32)</li>
+                </ul>
+                <p>Para su ejecución se buscan las hebras de mayor prioridad y si no hay hebras disponibles se ejecuta una hebra especial denominado <strong>hebra de inactividad</strong>.</p>
+                <p>Si una hebra de tiempo real de mayor prioridad, pasa a estado <strong>preparada</strong>, mientras otra de menor prioridad esta en <strong>ejecución</strong>, esta ultima será desalojada del CPU.</p>
+            </article>
+            <article>
+                <h3>:\ Adm. de procesos \ Windows \ Gestor de procesos ></h3>
+                <p>Proporciona servicios para</p>
+                <ul>
+                    <li>Crear Procesos</li>
+                    <li>Borrar Procesos</li>
+                    <li>Utilizar Utilizar</li>
+                </ul>
+                <ul>
+                    <li>Objetos trabajo
+                        <p>Recopilación de procesos. Se utilizan para definir parámetros de manera grupal.</p>
+                    </li>
                 </ul>
             </article>
             <article>
