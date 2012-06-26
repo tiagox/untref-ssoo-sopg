@@ -76,7 +76,7 @@
                         </ul>
                     </li>
                     <li>Fase 2 : BootLoader
-                       <ul>
+                        <ul>
                             <li>Carga kernel en memoria</li>
                             <li>Ubicacion</li>
                         </ul>
@@ -187,7 +187,7 @@
                 </ul>
                 <ul>
                     <li>Contexto del proceso
-                    <br>
+                        <br>
                         <ul>
                             <li>Identidad del proceso</li>  
                             <li>Entorno</li>
@@ -286,11 +286,13 @@
                     <li>Cerrojos de bucle sin fin.</li>
                 </ul>
                 <p><strong>B)</strong> Otra técnica para tratar interrupciones: Hardware de control de interrupciones.</p>
-                <ul>Se separa a las rutinas de servicio de interrupciones en dos secciones:
-                  <ul>
-                    <li>La mitad superior.</li>
-                    <li>La mitad inferior.</li>
-                  </ul>
+                <ul>
+                    <li>Se separa a las rutinas de servicio de interrupciones en dos secciones:
+                        <ul>
+                            <li>La mitad superior.</li>
+                            <li>La mitad inferior.</li>
+                        </ul>
+                    </li>
                 </ul>
             </article>
             <article>
@@ -327,7 +329,7 @@
                 </ul>
             </article>
             <article>
-                <h3>:\ Adm. de procesos \ Windows \ Hebras y planificación</h3>
+                <h3>:\ Adm. de procesos \ Windows \ Hebras y planificación ></h3>
                 <p>Una hebra es una unidad ejecutable.</p>
                 <p>Cada proceso tiene una o más hebras.</p>
                 <ul>
@@ -341,7 +343,7 @@
                 </ul>
             </article>
             <article>
-                <h3>:\ Adm. de procesos \ Windows \ Hebras y planificación</h3>
+                <h3>:\ Adm. de procesos \ Windows \ Hebras y planificación ></h3>
                 <p>Estados de las hebras.</p>
                 <ul>
                     <li>Preparada</li>
@@ -353,7 +355,7 @@
                 </ul>
             </article>
             <article class="nobackground">
-                <h3>:\ Adm. de procesos \ Windows \ Hebras y planificación</h3>
+                <h3>:\ Adm. de procesos \ Windows \ Hebras y planificación ></h3>
                 <p>Esquema de prioridades.</p>
                 <ul>
                     <li>Clase variable (0 - 15)</li>
@@ -427,10 +429,10 @@
                 </ul>
             </article>
             <article>
-                <h2>Administración de memoria</h2>
+                <h2>Administración de Memoria</h2>
             </article>
             <article>
-                <h3>/ Administración de memoria / Linux $</h3>
+                <h3>/ Administración de Memoria / Linux $</h3>
                 <ul>
                     <li>Memoria física</li>
                     <li>Memoria virtual</li>
@@ -438,7 +440,7 @@
                 </ul>
             </article>
             <article>
-                <h3>/Administración de memoria /Memoria física / Linux $</h3>
+                <h3>/ Adm. de Memoria / Linux / Memoria física $</h3>
                 <ul>
                     <li>Zone DMA</li>
                     <li>Zone NORMAL</li>
@@ -452,9 +454,9 @@
                 <h3> Estrategia de asignacion por franjas</h3>
             </article>
             <article>
-                <h3>/Administración de memoria /Memoria virtual / Linux $</h3>
+                <h3>/ Adm. de Memoria / Linux / Memoria virtual $</h3>
                 <p>El sistema de memoria virtual de linux es el responsable de mantener el espacio de direcciones 
-                visibles para cada proceso.</p>
+                    visibles para cada proceso.</p>
                 <h3> Intercambio y paginacion :</h3>
                 <ul>
                     <li>Algoritmo de politica</li>
@@ -481,22 +483,19 @@
             </article>
             <article>
                 <h3>/ Sistema de archivos / Linux $</h3>
-            </article>
-            <article>
-                <h3>:\ Sistema de archivos \ Linux $ ></h3>
                 <p>Linux mantiene el modelo estandar de sistema de archivos UNIX.</p>
                 <p>Un archivo no es solo un objeto almacenado en un disco.</p>
                 <p>El kernel gestiona todos los tipos de archivos bajo una capa de sistema de archivos virtual.</p>
             </article>
             <article>
-                <h3>:..\ Sistema de archivos Virtual\ Linux $ ></h3>
+                <h3>/ Sis. de archivos / Linux / Sis. de archivos Virtual $</h3>
                 <p>Posee 2 componentes principales.</p>
-                 <ul>
+                <ul>
                     <li>Cojunto de definiciones de objeto sistema de archivos</li>
                     <li>Capa de software para manipular los mismos</li>
                 </ul>
-                 <p>Posee 4 tipos principales de objetos.</p>
-                 <ul>
+                <p>Posee 4 tipos principales de objetos.</p>
+                <ul>
                     <li>Un objeto INODO : representa un archivo individual</li>
                     <li>Un objeto ARCHIVO : representa un archivo abierto</li>
                     <li>Un objeto SUPERBLOQUE : representa a un sistema de archivos completo</li>
@@ -504,7 +503,7 @@
                 </ul>
             </article>
             <article>
-                <h3>:..\ Sistema de archivos PROC\ Linux $ ></h3>
+                <h3>/ Sis. de archivos / Linux / proc $</h3>
                 <p>Sistema de archivos cuyo contenido no esta almacenado en ninguna parte.</p>
                 <p>Cada subdirectorio del sistema de archivos corresponde con un proceso activo del sistema actual.</p>
                 <p>Ejemplo : PS en Unix.</p>
@@ -591,7 +590,7 @@
                     <li>Permite crear módulos de autenticacion bajo demanda, especificando en un archivo de configuración.</li>          
                 </ul>
             </article>
-            <article>
+            <article class="nobackground">
                 <h3>/ Seguridad / Linux $</h3>
                 <p><strong>Control de acceso:</strong> Se realiza utilizando identificadores numéricos unívocos.</p>
                 <ul>
@@ -617,7 +616,7 @@
                         <ul>
                             <li>Testigos de acceso</li>
                             <li>Privilegios/Límites</li>
-                            <li>Pulíticas de seguridad</li>
+                            <li>Políticas de seguridad</li>
                         </ul>
                     </li>
                     <li>Monitor de referencia de seguridad</li>
