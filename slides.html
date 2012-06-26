@@ -149,17 +149,19 @@
                     <li>Multiprocesamiento</li>
                 </ul>
             </article>
-            <article>
+           <article>
                 <h3>/ Adm. de Procesos / Linux / Gestión $</h3>
+                <br />
                 <ul>
                     <li>Modelo de procesos <code>fork()</code> y <code>exec()</code></li>
                 </ul>
                 <ul>
-                    <li>Contexto del proceso
-                        <ul>
-                            <li>Identidad del proceso</li>  
-                            <li>Entorno</li>
-                            <li>Contexto</li>
+                    <li>Contexto del proceso: Se divide en tres secciones:
+                       <br>
+                       <ul>
+                              <li>Identidad del proceso</li>  
+                              <li>Entorno</li>
+                              <li>Contexto</li>
                         </ul>
                     </li>
                 </ul>
@@ -167,32 +169,29 @@
             <article>
                 <h3>/ Adm. de Procesos / Linux / Gestión $</h3>
                 <ul>
-                    <li><strong>Identidad del proceso</strong>
+                    <li><strong>Identidad del proceso</strong></li>
                         <ul>
-                            <li> Id</li>
-                            <li>Credenciales</li>
-                            <li>Personalidad</li>
+                            <li> Id: Especifíca al sistema acerca de los procesos cuando una aplicación realiza una llamada.</li>
+                            <li>Credenciales: Determina los derechos de un proceso para acceder a archivos o a recursos.</li>
+                            <li>Personalidad: Puede modificar la semantica de ciertas llamadas al sistema.</li>
                         </ul>
                     </li>
                 </ul>
                 <ul>
-                    <li><strong>Entorno</strong>
+                    <li><strong>Entorno:</strong>
                         <ul>
                             <li>Se hereda del proceso padre</li>
-                            <li>Compuesto por dos vectores
-                                <ul>
-                                    <li>Vector de argumentos</li>
-                                    <li>Vector de entornos</li>
-                                </ul>
-                            </li>
+                            <li>Compuesto por dos vectores: El vector de argumentos y el vector de entornos</li>
                         </ul>
                     </li>
                 </ul>
             </article>
             <article>
                 <h3>/ Adm. de Procesos / Linux / Gestión $</h3>
-                <ul>
-                    <li><strong>Contexto</strong>
+                 <ul>
+                    <li><strong>Contexto: </strong>Es el estado del programa en ejecución</li>
+                    <br>
+                        Incluye:
                         <ul>
                             <li>Contexto de planificación</li>
                             <li>Contabilidad de recursos</li>
@@ -207,44 +206,42 @@
             </article>
             <article>
                 <h3>/ Adm. de Procesos / Linux / Procesos y Hebras $</h3>
+                <br>
                 <ul>
-                    <li>Llamada al sistema <code>clone()</code>
-                        <p>Es la llamada que permite la creación de hebras.</p>
-                    </li>
+                    <li>Llamada al sistema "<code>clone()</code>: Es la llamada que permite la creación de hebras."</li>
                 </ul>     
                 <ul>
-                    <li>Indicadores
-                        <p>Determinan el grado de compartición entre las tareas padre e hija.</p>
-                    </li>
+                    <li>Indicadores: Determinan el grado de compartición entre las tareas padre e hija.</li>
                 </ul>     
             </article>
             <article>
                 <h3>/ Adm. de Procesos / Linux / Planificación $</h3>
                 <p>Linux utiliza dos algoritmos de planificación:</p>
                 <ul>
-                    <li>Algoritmo de tiempo compartido
-                        <p>Utilizado para planificar de manera equitativa multiples procesos.</p>
-                    </li>
+                    <li>Algoritmo de tiempo compartido: utilizado para planificar de manera equitativa multiples procesos.</li>
                 </ul>     
                 <ul>
-                    <li>Algoritmo para tareas en tiempo real
-                        <p>Las prioridades son mas importantes que la equidad.</p>
-                    </li>
+                    <li>Algoritmo para tareas en tiempo real: las prioridades son mas importantes que la equidad.</li>
                 </ul>     
             </article>
             <article>
                 <h3>/ Adm. de Procesos / Linux / Planificación $</h3>
-                <p>El kernel de Linux utiliza las llamadas "Colas de ejecución" para mantener una lista de todas las tareas.</p>
+                <p>El kernel de Linux utiliza las llamadas "Colas de ejecución" para mantener una lista de todas las tareas.
+                    Contiene dos matrices de prioridad:</p>
                 <ul>
                     <li>Matriz de tareas activas.</li>
+                </ul>     
+                <ul>
                     <li>Matriz de tareas caducadas.</li>
-                </ul>
+                </ul>     
             </article>
             <article>
                 <h3>/ Adm. de Procesos / Linux / Planificación $</h3>
                 <p>Linux implementa dos clases de planificación en tiempo real:</p>
                 <ul>
                     <li>FCFS (<em>First Come, First Served</em>).</li>
+                </ul>     
+                <ul>
                     <li>Planificación por turnos.</li>
                 </ul>     
             </article>
@@ -253,7 +250,9 @@
                 <p>Una solicitud para ejecución en modo Kernel se produce si:</p>
                 <ul>
                     <li>Un programa en ejecución pide un servicio del Sistema Operativo.</li>
-                    <li>Un controlador de dispositivo genera una interrupción y el kernel comienza a ejecutar una rutina de tratamiento de la misma.</li>
+                </ul>     
+                <ul>
+                    <li>Un controlador de dispositivo genera una interrupción y el kernel comience a ejecutar una rutina de tratamiento de la misma.</li>
                 </ul>     
             </article>
             <article>
@@ -263,10 +262,12 @@
                     <li>Sistema de activación del mecanismo de apropiación del kernel.</li>
                     <li>Cerrojos de bucle sin fin.</li>
                 </ul>
-                <p>Otra técnica para tratar interrupciones: <strong>Hardware de control de interrupciones.</strong></p>
-                <p>Se separa a las rutinas de servicio de interrupciones en dos secciones.</p>
+                <p>Otra técnica para tratar interrupciones: Hardware de control de interrupciones.
+                    Se separa a las rutinas de servicio de interrupciones en dos secciones:</p>
                 <ul>
                     <li>La mitad superior.</li>
+                </ul>
+                <ul>
                     <li>La mitad inferior.</li>
                 </ul>
             </article>
@@ -275,6 +276,28 @@
                 <p>El multiprocesamiento simétrico de Linux permite que una serie de procesos separados, se ejecuten en diferentes procesadores.</p>
                 <ul>
                     <li>Se creó un único cerrojo de bucle sin fin del kernel para permitir que estuvieran activos concurrentemente en el kernel múltiples procesos.</li>
+                </ul>
+            </article>
+            <article>
+                <h3>Linux: Comunicación interprocesos</h3>
+                <br>
+                <p><strong>Sincronización</strong></p>
+                <br>
+                <p>Implica que un proceso sepa que se ha producido un suceso o que se transfiera datos de un proceso a otro.</p>
+                <br>
+                <ul>
+                    <li>Linux utiliza colas de espera y estados de planificación.</li>
+                    <li>También implementa el mecanismo de semaforos de Unix.</li>
+                </ul>
+            </article>
+            <article>
+                <h3>Linux: Comunicación interprocesos</h3>
+                <br>
+                <p><strong>Transferencia de datos entre procesos</strong></p>
+                <br>
+                <ul>
+                    <li>Mecanismo "Pipe": Permite que un procesos hijo herede el canal de comunicación del padre.</li>
+                    <li>Mecanismo de memoria compartida: Los datos escritos por un proceso en una región de memoria compartida pueden ser leidos por cuaquier otro proceso que haya mapeado dicha región en su espacio de direcciones.</li>
                 </ul>
             </article>
             <article>
